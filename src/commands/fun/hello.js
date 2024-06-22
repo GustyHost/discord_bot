@@ -3,6 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
   name: 'hello',
   description: 'Hey there GustyHost!',
+  managerOnly: true,
   callback: async (client, interaction) => {
 
     await interaction.deferReply();

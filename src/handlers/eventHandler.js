@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const getAllFiles = require('../utils/getAllFiles');
 
@@ -18,3 +19,4 @@ module.exports = (client) => {
     });
   }
 };
+/* eslint-enable */

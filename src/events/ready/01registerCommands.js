@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { testServer } = require('../../../config.json');
 const areCommandsDifferent = require('../../utils/areCommandsDifferent');
 const getApplicationCommands = require('../../utils/getApplicationCommands');
@@ -54,3 +55,4 @@ module.exports = async (client) => {
     console.log(`TThere was an error: ${error}`);
   }
 };
+/* eslint-enable */

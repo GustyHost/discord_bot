@@ -1,4 +1,4 @@
-const { devs, testServer } = require('../../../config.json');
+const { devs, testServer, managerRole } = require('../../../config.json');
 const getLocalCommands = require('../../utils/getLocalCommands');
 
 module.exports = async (client, interaction) => {
@@ -17,6 +17,16 @@ module.exports = async (client, interaction) => {
       if (!devs.includes(interaction.member.id)) {
         interaction.reply({
           content: 'Only developers are allowed to run this command.',
+          ephemeral: true,
+        });
+        return;
+      }
+    }
+
+    if (commandObject.managerOnly) {
+      if (!interaction.member.roles.cache.has(managerRole)) {
+        interaction.reply({
+          content: 'Only managers+ are allowed to run this command.',
           ephemeral: true,
         });
         return;
